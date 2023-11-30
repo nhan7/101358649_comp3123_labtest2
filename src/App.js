@@ -26,7 +26,6 @@ function App() {
   }
 
 
-
   const handleSearch = (cityData) =>{
     fetchWeatherData(cityData)
   }
@@ -39,27 +38,18 @@ function App() {
 
       {WeatherData && (
         <div class="weather-container">
-          
-          <h2   class="text"> HUMIDITY: {WeatherData.main.humidity}%</h2 >
-          <h2   class="text"> AIR PRESSURE: {WeatherData.main.pressure} mb</h2 >
+          <h2 class="text"> FEELS LIKE: {WeatherData.main.feels_like}°C</h2 >
 
-          <h2   class="text"> MIN TEMP: {WeatherData.main.temp_min}°C</h2 >
-          <h2   class="text">MAX TEMP: {WeatherData.main.temp_max}°C</h2 >
+          <h2 class="text"> HUMIDITY: {WeatherData.main.humidity}%</h2 >
+          <h2 class="text"> AIR PRESSURE: {WeatherData.main.pressure} mb</h2 >
+          <h2 class="text"> MIN TEMP: {WeatherData.main.temp_min}°C</h2 >
+          <h2 class="text">MAX TEMP: {WeatherData.main.temp_max}°C</h2 >
           <div class="main-info">
-
-
-            <h1  class="text">{convertTimeStamp(WeatherData.dt)}</h1>
+            <h1 class="text">{convertTimeStamp(WeatherData.dt)}</h1>
             <h1 class="text">{WeatherData.name}</h1>
-            <h1  class="big-text">{WeatherData.main.temp}°C</h1>
-
+            <h1 class="big-text">{WeatherData.main.temp}°C</h1>
             <img src={getIcon(WeatherData.weather[0].icon)} alt={WeatherData.weather[0].description}/>
           </div>
-
-
-
-
-
-
         </div>
       )}
 
